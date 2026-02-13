@@ -134,8 +134,16 @@ function closeCard() {
   document.getElementById("card").style.display = "none";
 }
 
-for(let i=0; i<total; i++){
-  createBallon(i);
+let i = 0;
+
+const interval = setInterval(() => {
+  if (i < total) {
+    createBalloon(i);
+    i++;
+  } else {
+    clearInterval(interval);
+  }
+}, 1500); // new balloon every 1.5 seconds
 }
 </script>
 
