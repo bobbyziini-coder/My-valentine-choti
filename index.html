@@ -127,6 +127,7 @@ body {
 
 <body>
 
+<!-- Background Music -->
 <audio id="bgMusic" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
@@ -155,6 +156,7 @@ body {
 let popped = 0;
 const total = 8;
 const counter = document.querySelector(".counter");
+const music = document.getElementById("bgMusic");
 
 const messages = [
   {title:"Your Smile", img:"pic1.jpg", text:"Your smile is my favorite thing 💕"},
@@ -179,17 +181,19 @@ function createSparkles(x, y) {
 }
 
 function heartExplosion() {
-  for (let i = 0; i < 30; i++) {
+  for (let i = 0; i < 120; i++) {
     const heart = document.createElement("div");
     heart.className = "explodeHeart";
     heart.innerText = "💖";
+
     heart.style.left = Math.random() * window.innerWidth + "px";
-    heart.style.top = window.innerHeight / 2 + "px";
+    heart.style.top = Math.random() * window.innerHeight + "px";
+
     document.body.appendChild(heart);
-    setTimeout(() => heart.remove(), 1500);
+    setTimeout(() => heart.remove(), 2000);
   }
 }
-
+  
 function createBalloon(index) {
   const balloon = document.createElement("img");
   balloon.src = "ballon.png";
@@ -200,8 +204,9 @@ function createBalloon(index) {
 
   balloon.onclick = function(e) {
 
+    // VIBRATION
     if (navigator.vibrate) {
-      navigator.vibrate(50);
+      navigator.vibrate(100);
     }
 
     createSparkles(e.clientX, e.clientY);
@@ -252,8 +257,9 @@ const interval = setInterval(() => {
   }
 }, 1500);
 
+// Music starts after first tap anywhere
 document.body.addEventListener("click", function() {
-  document.getElementById("bgMusic").play();
+  music.play().catch(() => {});
 }, { once: true });
 
 </script>
