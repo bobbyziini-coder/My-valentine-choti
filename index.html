@@ -25,6 +25,7 @@ body {
   margin-top: 5px;
 }
 
+/* BALLON STYLE */
 .ballon {
   position: fixed;
   width: 60px;
@@ -37,9 +38,9 @@ body {
 @keyframes floatUp {
   from { transform: translateY(0); }
   to { transform: translateY(-120vh); }
+}
 
-     }
-
+/* CARD */
 .card {
   position: fixed;
   top: 50%;
@@ -79,7 +80,7 @@ body {
 
 <div class="topbar">
   Bobby ❤️ Choti
-  <div class="counter">0 / 8 balloons popped</div>
+  <div class="counter">0 / 8 ballons popped</div>
 </div>
 
 <div id="card" class="card">
@@ -133,7 +134,7 @@ function closeCard() {
   document.getElementById("card").style.display = "none";
 }
 
-for(let i=0;i<total;i++){
+for(let i=0; i<total; i++){
   createBallon(i);
 }
 </script>
