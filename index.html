@@ -102,21 +102,21 @@ const messages = [
   {title:"My Heart", img:"pic3.jpg", text:"You own my heart in the most beautiful way."}
 ];
 
-function createBalloon(index) {
-  const balloon = document.createElement("img");
-  balloon.src = "ballon.png";
-  balloon.className = "balloon";
-  balloon.style.left = Math.random() * window.innerWidth + "px";
-  balloon.style.animationDuration = (6 + Math.random()*5) + "s";
+function createBallon(index) {
+  const ballon = document.createElement("img");
+  ballon.src = "ballon.jpg";
+  ballon.className = "ballon";
+  ballon.style.left = Math.random() * window.innerWidth + "px";
+  ballon.style.animationDuration = (6 + Math.random()*5) + "s";
 
-  balloon.onclick = function() {
-    balloon.remove();
+  ballon.onclick = function() {
+    ballon.remove();
     showCard(messages[index]);
     popped++;
     counter.innerText = popped + " / " + total + " balloons popped";
   };
 
-  document.body.appendChild(balloon);
+  document.body.appendChild(ballon);
 }
 
 function showCard(data) {
