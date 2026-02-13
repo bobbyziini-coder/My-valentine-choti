@@ -25,17 +25,20 @@ body {
   margin-top: 5px;
 }
 
-.balloon {
-  position: absolute;
+.ballon {
+  position: fixed;
   width: 60px;
+  bottom: -100px;
   cursor: pointer;
   animation: floatUp linear infinite;
+  z-index: 10;
 }
 
 @keyframes floatUp {
-  from { transform: translateY(100vh); }
-  to { transform: translateY(-150px); }
-}
+  from { transform: translateY(0); }
+  to { transform: translateY(-120vh); }
+
+     }
 
 .card {
   position: fixed;
@@ -113,7 +116,7 @@ function createBallon(index) {
     ballon.remove();
     showCard(messages[index]);
     popped++;
-    counter.innerText = popped + " / " + total + " balloons popped";
+    counter.innerText = popped + " / " + total + " ballons popped";
   };
 
   document.body.appendChild(ballon);
