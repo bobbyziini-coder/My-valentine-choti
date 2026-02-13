@@ -29,9 +29,9 @@ body {
 .ballon {
   position: fixed;
   width: 60px;
-  bottom: -100px;
+  bottom: -80px;
   cursor: pointer;
-  animation: floatUp linear infinite;
+  animation: floatUp linear forward;
   z-index: 10;
 }
 
@@ -111,7 +111,7 @@ function createBallon(index) {
   ballon.src = "ballon.png";
   ballon.className = "ballon";
   ballon.style.left = Math.random() * window.innerWidth + "px";
-  ballon.style.animationDuration = (6 + Math.random()*5) + "s";
+  ballon.style.animationDuration = (10 + Math.random()*5) + "s";
 
   ballon.onclick = function() {
     ballon.remove();
