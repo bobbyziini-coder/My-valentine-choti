@@ -134,8 +134,13 @@ function closeCard() {
   document.getElementById("card").style.display = "none";
 }
 
-let i = 0;
+for(let i=0; i<total; i++){
+  createBallon(i);
+}
+</script>
 
+</body>
+</html>
 const interval = setInterval(() => {
   if (i < total) {
     createBallon(i);
